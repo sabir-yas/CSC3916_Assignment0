@@ -1,0 +1,106 @@
+HTTP Headers Analysis
+====================
+
+This file describes the key HTTP request and response headers observed
+when interacting with the Google Books API using Postman.
+
+
+REQUEST 1: Book Search
+GET https://www.googleapis.com/books/v1/volumes?q=Turing
+--------------------------------------------------------
+
+REQUEST HEADERS
+
+1. User-Agent: PostmanRuntime/7.51.0
+   - Identifies Postman as the client application making the HTTP request.
+
+2. Accept: */*
+   - Indicates that the client can accept responses of any media type.
+
+3. Host: www.googleapis.com
+   - Specifies the target server hosting the Google Books API.
+
+4. Accept-Encoding: gzip, deflate, br
+   - Specifies compression formats supported by the client to reduce response size.
+
+5. Connection: keep-alive
+   - Requests that the TCP connection remain open for reuse.
+
+
+RESPONSE HEADERS
+
+1. Content-Type: application/json; charset=UTF-8
+   - Indicates that the response body is JSON formatted using UTF-8 encoding.
+
+2. Content-Encoding: gzip
+   - Specifies that the response body is compressed using gzip.
+
+3. Date: Mon, 12 Jan 2026 05:19:43 GMT
+   - The date and time when the server generated the response.
+
+4. Server: ESF
+   - Identifies the Google server software handling the request.
+
+5. X-Content-Type-Options: nosniff
+   - Prevents browsers from attempting to guess the MIME type of the response.
+
+6. X-Frame-Options: SAMEORIGIN
+   - Prevents the response from being displayed in a frame from another origin.
+
+7. Alt-Svc: h3=":443"; ma=2592000
+   - Indicates support for alternative services such as HTTP/3.
+
+8. Transfer-Encoding: chunked
+   - Indicates that the response is sent in dynamically sized chunks.
+
+
+REQUEST 2: Book Details (Chained Request)
+GET https://www.googleapis.com/books/v1/volumes/7pFHBAAAQBAJ
+-----------------------------------------------------------
+
+REQUEST HEADERS
+
+1. User-Agent: PostmanRuntime/7.51.0
+   - Identifies Postman as the HTTP client.
+
+2. Accept: */*
+   - Indicates that the client accepts any response media type.
+
+3. Host: www.googleapis.com
+   - Specifies the Google Books API server.
+
+4. Accept-Encoding: gzip, deflate, br
+   - Specifies supported compression formats.
+
+5. Connection: keep-alive
+   - Keeps the network connection open for efficiency.
+
+
+RESPONSE HEADERS
+
+1. Content-Type: application/json; charset=UTF-8
+   - Indicates that the response body contains JSON data.
+
+2. Content-Encoding: gzip
+   - Indicates that the response body is compressed.
+
+3. Date: Mon, 12 Jan 2026 05:22:29 GMT
+   - The time the server sent the response.
+
+4. Server: ESF
+   - Identifies the server handling the request.
+
+5. X-XSS-Protection: 0
+   - Disables browser-based cross-site scripting protection.
+
+6. X-Frame-Options: SAMEORIGIN
+   - Prevents clickjacking by disallowing framing from other domains.
+
+7. X-Content-Type-Options: nosniff
+   - Prevents MIME type sniffing.
+
+8. Alt-Svc: h3=":443"; ma=2592000
+   - Advertises alternative services such as HTTP/3.
+
+9. Transfer-Encoding: chunked
+   - Indicates chunked transfer of response data.
