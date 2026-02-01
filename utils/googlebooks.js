@@ -16,5 +16,5 @@ module.exports = async (phrase) => {
         requestHeader: response.config.headers
     }
 
-    return formattedObj
+    return JSON.stringify(results.data);
 }
